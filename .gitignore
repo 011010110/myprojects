@@ -18,9 +18,11 @@
 *.zip
 *.tar.gz
 *.rar
-*.gitignore
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 .idea
+/my-springboot-starter/*.iml
+/my-springboot-starter/*.md
+HELP.md
