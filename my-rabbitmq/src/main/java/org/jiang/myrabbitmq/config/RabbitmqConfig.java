@@ -87,9 +87,6 @@ public class RabbitmqConfig {
     }
 
 
-
-
-
     @Bean
     public Exchange directExchange() {
         Map<String, Object> arguments = new HashMap<>();
@@ -97,7 +94,6 @@ public class RabbitmqConfig {
 //        arguments.put("alternate-exchange", RabbitmqConfig.ALTERNATE_EXCHANGE);
         return new DirectExchange(RabbitmqConfig.DIRECT_EXCHANGE, true, false, arguments);
     }
-
 
 
     @Bean
@@ -154,12 +150,12 @@ public class RabbitmqConfig {
 
     @RabbitListener(queues = RabbitmqConfig.HELLO_QUEUE)
     public void rabbitmqListener(String message) {
-        System.out.println(DateUtils.getNow()+"收到了" + RabbitmqConfig.HELLO_QUEUE + "队列消息：" + message);
+        System.out.println(DateUtils.getNow() + "收到了" + RabbitmqConfig.HELLO_QUEUE + "队列消息：" + message);
     }
 
     @RabbitListener(queues = RabbitmqConfig.HI_QUEUE)
     public void rabbitmqHiQueueListener(String message) {
-        System.out.println(DateUtils.getNow()+"收到了" + RabbitmqConfig.HI_QUEUE + "队列消息：" + message);
+        System.out.println(DateUtils.getNow() + "收到了" + RabbitmqConfig.HI_QUEUE + "队列消息：" + message);
     }
 
     /*@RabbitListener(queues = RabbitmqConfig.NORMAL_QUEUE)
@@ -169,11 +165,11 @@ public class RabbitmqConfig {
 
     @RabbitListener(queues = RabbitmqConfig.ALTERNATE_QUEUE)
     public void rabbitmqAlterNateQueueListener(String message) {
-        System.out.println(DateUtils.getNow()+"收到了" + RabbitmqConfig.ALTERNATE_QUEUE + "队列消息：" + message);
+        System.out.println(DateUtils.getNow() + "收到了" + RabbitmqConfig.ALTERNATE_QUEUE + "队列消息：" + message);
     }
 
     @RabbitListener(queues = RabbitmqConfig.DLX_QUEUE)
     public void rabbitmqDlxQueueListener(String message) {
-        System.out.println(DateUtils.getNow()+"收到了" + RabbitmqConfig.DLX_QUEUE + "队列消息：" + message);
+        System.out.println(DateUtils.getNow() + "收到了" + RabbitmqConfig.DLX_QUEUE + "队列消息：" + message);
     }
 }

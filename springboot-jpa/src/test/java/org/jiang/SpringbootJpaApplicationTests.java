@@ -17,6 +17,7 @@ class SpringbootJpaApplicationTests {
 
     @Autowired
     private UserService userService;
+
     @Test
     void contextLoads() {
         User user = new User();
@@ -26,7 +27,7 @@ class SpringbootJpaApplicationTests {
     }
 
     @Test
-    void userList(){
+    void userList() {
         List<User> users = userService.findAll();
         users.forEach((user -> {
             System.out.println(user.toString());
@@ -34,10 +35,10 @@ class SpringbootJpaApplicationTests {
     }
 
     @Test
-    void pageList(){
+    void pageList() {
         PageRequest pageRequest = PageRequest.of(1, 2);
         Page<User> pageUsers = userService.findAll(pageRequest);
-        System.out.println("总页数:"+pageUsers.getTotalPages());
+        System.out.println("总页数:" + pageUsers.getTotalPages());
         pageUsers.forEach((user -> {
             System.out.println(user.toString());
         }));

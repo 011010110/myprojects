@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtils {
 
-    public static String getNow(){
+    public static String getNow() {
         return DateTimeFormatter.ofPattern("yyyy-MM-dd hh:MM:ss").format(LocalDateTime.now());
     }
 }

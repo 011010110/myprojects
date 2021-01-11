@@ -9,6 +9,6 @@ package org.jiang;
 
 public class DemoServiceImpl implements DemoService {
     public void hello(String content) {
-        System.out.println("hello :"+content);
+        System.out.println("hello :" + content);
     }
 }

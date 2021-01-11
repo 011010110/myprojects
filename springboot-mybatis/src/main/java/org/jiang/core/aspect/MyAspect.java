@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect {
 
     @Before("execution(public void save(..))")
-    public void allMethod(){
+    public void allMethod() {
         System.out.println("方法拦截！");
     }
 }

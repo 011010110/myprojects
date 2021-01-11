@@ -39,10 +39,11 @@ public class ElasticsearchConfig extends ElasticsearchConfigurationSupport {
 
     /**
      * 配置highLevelClient
+     *
      * @return
      */
     @Bean
-    public RestHighLevelClient elasticsearchRestClient(){
+    public RestHighLevelClient elasticsearchRestClient() {
 
         ClientConfiguration configuration = ClientConfiguration.builder()
                 .connectedTo("192.168.232.129:9200", "192.168.232.131:9200", "192.168.232.132:9200")

@@ -21,6 +21,7 @@ class SpringbootMybatisApplicationTests {
     private HelloService helloService;
     @Autowired
     private ExceptionService exceptionService;
+
     @Test
     void contextLoads() {
         User user = new User();
@@ -31,12 +32,12 @@ class SpringbootMybatisApplicationTests {
     }
 
     @Test
-    void myStarterTest(){
+    void myStarterTest() {
         helloService.testMethod();
     }
 
     @Test
-    void exceptionTest(){
+    void exceptionTest() {
         /*try{
             exceptionService.exceptionMethod();
         }catch (Exception e){
@@ -48,11 +49,11 @@ class SpringbootMybatisApplicationTests {
     }
 
     @Test
-    void beanWrapperTest(){
+    void beanWrapperTest() {
         User user = new User();
         BeanWrapperImpl beanWrapper = new BeanWrapperImpl(user);
-        beanWrapper.setPropertyValue("userName","beanwrapper_userName");
-        beanWrapper.setPropertyValue("password","beanwrapper_password");
+        beanWrapper.setPropertyValue("userName", "beanwrapper_userName");
+        beanWrapper.setPropertyValue("password", "beanwrapper_password");
         Object wrappedInstance = beanWrapper.getWrappedInstance();
         System.out.println(wrappedInstance.toString());
     }

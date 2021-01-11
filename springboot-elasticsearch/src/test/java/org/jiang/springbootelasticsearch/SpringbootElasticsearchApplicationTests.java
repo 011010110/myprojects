@@ -20,9 +20,10 @@ class SpringbootElasticsearchApplicationTests {
     @Qualifier("client")
     @Autowired
     private RestHighLevelClient client;
+
     @Test
     public void restClientAdd() throws IOException {
-        IndexRequest indexRequest = new IndexRequest("test","employee");
+        IndexRequest indexRequest = new IndexRequest("test", "employee");
         Employee employee = new Employee();
         employee.setName("james harder");
         employee.setSex("man");
@@ -30,7 +31,7 @@ class SpringbootElasticsearchApplicationTests {
         employee.setAge("huston");
         ObjectMapper objectMapper = new ObjectMapper();
         String employeeString = objectMapper.writeValueAsString(employee);
-        IndexResponse indexResponse = client.index(indexRequest.source(employeeString,employeeString), RequestOptions.DEFAULT);
+        IndexResponse indexResponse = client.index(indexRequest.source(employeeString, employeeString), RequestOptions.DEFAULT);
         System.out.println(indexResponse.toString());
     }
 
